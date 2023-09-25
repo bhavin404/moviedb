@@ -13,8 +13,12 @@
 .header a{
   color:var(--whiteColor);
 }
+.cart img{
+  mix-blend-mode: multiply;
+  
+}
 .banner{
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/502/419/818/the-dark-knight-batman-movies-wallpaper-preview.jpg");
+  background-image: url("../public/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -80,3 +84,90 @@ p.movie-title{
   background-color:var(--primaryColor);
   color:var(--whiteColor)
 }
+.details-box{
+  height: 500px;
+  background-color: #2b4162;
+background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+
+}
+.description-box{
+  margin-left: 20px;
+}
+
+.description-box p,h3,span,b{
+  color: var(--whiteColor) !important;
+}
+span{
+  font-weight: 500;
+}
+
+.runtime{
+  
+  background-color: var(--primaryColor);
+  width: max-content;
+  border-radius: 50%;
+}
+.runtime p{
+  margin-bottom: 0;
+}
+.save-movie button{
+  background-color:var(--primaryColor);
+  color: var(--whiteColor);
+}
+
+.pagination-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-btn button{
+  
+  padding: 10px 20px;
+  background-color:var(--primaryColor);
+  color: var(--whiteColor);
+  border-radius: 10px;
+}
+.cart{
+  position: relative;
+}
+.circle p{
+  position: absolute;
+  top:0;
+  right: 0;
+  margin-bottom: 0;
+  padding: 5px 10px;
+  background-color:red;
+  color: var(--whiteColor);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.card-box{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);;
+  background-color: beige;
+/* background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%); */
+  /* background-color: var(--primaryColor); */
+}
+.card-img{
+  width: max-content;
+}
+.card-img p{
+  margin-left: 30px;
+  font-size:24px;
+
+}
+.card-img img{
+  width: 100px;
+  z-index: 1111;
+  border-radius: 10px;
+}
+.card-button button{
+  padding: 10px 20px;
+  border:none;
+  outline:none;
+  background: var(--primaryColor);
+  color:var(--whiteColor);
+  border-radius: 10px;
+}
+
+

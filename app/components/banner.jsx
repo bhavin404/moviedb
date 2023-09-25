@@ -1,6 +1,7 @@
 'use client'
 
-import { SET_MOVIES } from "@/redux/reducer/movieSlice"
+import {SET_MOVIES}  from "@/redux/reducer/movieSlice"
+import { useRouter }  from "next/navigation"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 
@@ -8,6 +9,7 @@ import { useDispatch } from "react-redux"
 
 export default function Banner() {
   const [name, setName] = useState("")
+  const router = useRouter()
 
   const dispatch = useDispatch()
 
@@ -17,8 +19,10 @@ export default function Banner() {
 
   const submitData=(e)=>{
     e.preventDefault()
-    console.log("target",name)
-    dispatch(SET_MOVIES(name))
+    if(name){
+    router.push(`/search/${name}`)
+    }
+    // dispatch(SET_MOVIES(name))
   }
   return (
     <div className='banner p-5' >
