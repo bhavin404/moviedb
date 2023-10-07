@@ -3,14 +3,14 @@ import { getMovieDetails } from "@/api/request"
 import { SET_MOVIES } from "@/redux/reducer/movieSlice"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 function MovieDetailsPage({params}) {
   const [movieDetails, setMoviesDetails] = useState({})
+  const movieId =useSelector(state=> state.allMovies)
   const dispatch = useDispatch()
 
   const  getMovieDetails = async()=>{
-    console.log("called")
     fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=26eb8fe0ea17478b691097b4e10c4ac9`)
     .then((res)=>res.json())
     .then((data)=>setMoviesDetails(data))
@@ -23,7 +23,7 @@ function MovieDetailsPage({params}) {
   },[])
 
   // const movieDetails = await getMovieDetails(params.id)
-  const {title,overview,genres ,runtime}=movieDetails
+  const {title,overview,genres ,runtime,id}=movieDetails
 
   const Image_Url =process.env.Image_Url || "https://www.themoviedb.org/t/p/w220_and_h330_face";
 
@@ -69,8 +69,8 @@ function MovieDetailsPage({params}) {
   
     dispatch(SET_MOVIES(details));
   
-    console.log("datsss", localArray);
   };
+  console.log("datsss", movieId);
   
   return (
     <div>
@@ -94,7 +94,14 @@ function MovieDetailsPage({params}) {
           </div>
           
           <div className="save-movie">
-          <button className="px-3 py-2" onClick={sendToWatchlist} >Save</button>
+          
+          {movieId.some(item => item.id === movieDetails.id) ? (
+            // Show a different button or message when the id exists in movieId
+            <button className="px-3 py-2">Already Saved</button>
+          ) : (
+            <button className="px-3 py-2" onClick={sendToWatchlist}>Save</button>
+          )}
+
           </div>
           </div>
         </div>  

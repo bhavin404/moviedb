@@ -130,6 +130,9 @@ span{
 .cart{
   position: relative;
 }
+.cart:hover{
+  cursor: pointer;
+}
 .circle p{
   position: absolute;
   top:0;
@@ -168,6 +171,7 @@ span{
   background: var(--primaryColor);
   color:var(--whiteColor);
   border-radius: 10px;
+  margin-left: 30px;
 }
 
 

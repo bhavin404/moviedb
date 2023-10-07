@@ -40,15 +40,16 @@ function Cart() {
          <div key={index} className="card-box d-flex m-3 p-4">
             <div className="card-img d-flex ">
                 <Image srcset={Image_Url+details.img} alt="information"/>
-                <p className="ml-3">{details.title}</p>    
+                <div>
+                <p className="ml-3">{details.title}</p>  <br />
+                <div className="card-button ">
+                    <button  onClick={(e)=>onDelete(details.id)} >Delete</button>
+                </div>
+                </div>
             
             </div>
 
-            <div className="card-details">
-                <div className="card-button">
-                    <button onClick={(e)=>onDelete(details.id)} >Delete</button>
-                </div>
-            </div>
+          
          
      </div>
         )}

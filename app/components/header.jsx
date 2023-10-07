@@ -32,9 +32,10 @@ function Header() {
       </ul>
      
     </div>
-    <div className="cart">
+    
+    <div className="cart cursor-pointer" onClick={goToCart}>
       <Image alt="cart" onClick={goToCart} className='cursor-pointer'  srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXarpHMfVSh_XWAmdhyemItD0yoFepxga5SX1tSRw&s.png" width={50}/>
-      <div className="circle">
+      <div className="circle cursor-pointer" onClick={goToCart}>
         <p>{number.length}</p>
       </div>
     </div>
