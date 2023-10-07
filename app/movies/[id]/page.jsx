@@ -81,7 +81,7 @@ function MovieDetailsPage({params}) {
           <div className="description-box">
           <div className="title-genre">
            <h3 className="title"> {title}</h3>
-            <span>Genre: </span>{movieDetails.genres?.map((genre,id)=> <span>{genre.name} </span>)}
+            <span>Genre: </span>{movieDetails.genres?.map((genre,id)=> <span key={index}>{genre.name} </span>)}
           </div>
           <div className="overview mt-3">
           <b>Overview:</b>

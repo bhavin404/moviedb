@@ -43,7 +43,7 @@ function Cart() {
     return (
     <div className='cart'>
         {data?.map((details,index)=>
-         <div className="card-box d-flex m-3 p-4">
+         <div key={index} className="card-box d-flex m-3 p-4">
             <div className="card-img d-flex ">
                 <Image srcset={Image_Url+details.img}/>
                 <p className="ml-3">{details.title}</p>    
