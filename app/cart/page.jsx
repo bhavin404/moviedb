@@ -11,7 +11,6 @@ function Cart() {
     // const [datas, setDatas] = useState(data)
     const [index, setIndex] = useState("")
     const dispatch = useDispatch()
-    console.log("datass",data)
     const onDelete =(id)=>{
         const index= data.findIndex(obj => obj.id==id)
         setIndex(index)
@@ -19,7 +18,6 @@ function Cart() {
 
     }
     const getALLItemfromLocal=()=>{
-        console.log("heybro1")
         const data = localStorage.getItem("data");
         const allData = JSON.parse(data)
         console.log("checking",allData)
@@ -28,24 +26,20 @@ function Cart() {
         // });
         // setDatas(allData)
     }
-    const fillAllData=()=>{
-        console.log("heybro",data)
-       
-    }
+   
     useEffect(()=>{
-        if(data.length==0){
+        if(data?.length==0){
             getALLItemfromLocal()
         }
 
         
     },[])
-    console.log("firsst==>",data)
     return (
     <div className='cart'>
         {data?.map((details,index)=>
          <div key={index} className="card-box d-flex m-3 p-4">
             <div className="card-img d-flex ">
-                <Image srcset={Image_Url+details.img}/>
+                <Image srcset={Image_Url+details.img} alt="information"/>
                 <p className="ml-3">{details.title}</p>    
             
             </div>

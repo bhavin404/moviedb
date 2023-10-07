@@ -33,7 +33,7 @@ function Header() {
      
     </div>
     <div className="cart">
-      <Image onClick={goToCart} className='cursor-pointer'  srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXarpHMfVSh_XWAmdhyemItD0yoFepxga5SX1tSRw&s.png" width={50}/>
+      <Image alt="cart" onClick={goToCart} className='cursor-pointer'  srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXarpHMfVSh_XWAmdhyemItD0yoFepxga5SX1tSRw&s.png" width={50}/>
       <div className="circle">
         <p>{number.length}</p>
       </div>

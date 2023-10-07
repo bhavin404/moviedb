@@ -76,7 +76,7 @@ function MovieDetailsPage({params}) {
     <div>
         <div className="details-box p-5 d-flex">
           <div className="details-img">
-            <Image srcset={Image_Url+movieDetails.poster_path} />
+            <Image srcset={Image_Url+movieDetails.poster_path} alt="poster"/>
           </div>
           <div className="description-box">
           <div className="title-genre">

@@ -8,7 +8,7 @@ function SingleCard(props) {
     <div className="single-card mt-3">
     <Link href={"/movies/"+props.details.id}>
         <div className="card-image">
-            <Image className="poster-img" srcset={Image_Url+props.details.poster_path} alt="" />
+            <Image className="poster-img" srcset={Image_Url+props.details.poster_path} alt="poster" />
             <div className="rating-circle d-flex justify-content-center align-items-center">
                 {props.details.vote_average}
             </div>
